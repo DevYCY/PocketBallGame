@@ -42,6 +42,19 @@ public class TimerState : MonoBehaviour
             time -= 1;
             // 텍스트 UI에 시간 서식 표현 // 
             text.text = minute + ":" + string.Format("{0:D2}", seconds);
+            // 별 관리 루틴 //
+            if( minute < 2)
+            {
+                GameManager.instance.stars[2].sprite = GameManager.instance.greyedStar; 
+            }
+            if( minute < 1)
+            {
+                GameManager.instance.stars[1].sprite = GameManager.instance.greyedStar;
+            }
+            if( minute == 0 && seconds < 30)
+            {
+                GameManager.instance.stars[0].sprite = GameManager.instance.greyedStar;
+            }
             // 1초 딜레이 거는 코드 //
             yield return new WaitForSeconds(1);
         }

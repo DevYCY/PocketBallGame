@@ -71,7 +71,10 @@ public class PoolGameController : MonoBehaviour {
     public void Replay()
     {
         SceneManager.LoadScene("Stage1");
-		Time.timeScale = 1.0f; 
+		Time.timeScale = 1.0f;
+        GameManager.instance.stars[0].sprite = GameManager.instance.normalStar;
+        GameManager.instance.stars[1].sprite = GameManager.instance.normalStar;
+        GameManager.instance.stars[2].sprite = GameManager.instance.normalStar;
     }
 
     public void Home()
