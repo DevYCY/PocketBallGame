@@ -51,7 +51,7 @@ public class TimerState : MonoBehaviour
             {
                 GameManager.instance.stars[1].sprite = GameManager.instance.greyedStar;
             }
-            if( minute == 0 && seconds < 30)
+            if( minute == 0 && seconds < 10)
             {
                 GameManager.instance.stars[0].sprite = GameManager.instance.greyedStar;
             }
